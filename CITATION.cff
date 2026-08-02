@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this research snapshot, please cite the accompanying article."
+title: "AI-Radiomics-Carotid research snapshot"
+type: software
+authors:
+  - family-names: Mojtahedi
+    given-names: Ramtin
+repository-code: "https://github.com/Ramtin-Mojtahedi/AI-Radiomics-Carotid"
+keywords:
+  - carotid plaque
+  - ultrasound
+  - radiomics
+  - cardiovascular risk
+  - machine learning
+preferred-citation:
+  type: article
+  title: "Radiomic Carotid Plaque Features Integrated into Machine Learning Models for Cardiovascular Risk Prediction"
+  authors:
+    - family-names: Hu
+      given-names: Ricky
+    - family-names: Mojtahedi
+      given-names: Ramtin
+    - family-names: Duli
+      given-names: Ergi
+    - family-names: Hétu
+      given-names: Marie-France
+    - family-names: Mantella
+      given-names: Laura
+    - family-names: Simpson
+      given-names: "Amber L."
+    - family-names: Blaha
+      given-names: "Michael J."
+    - family-names: Barwell
+      given-names: Taylor
+    - family-names: Liblik
+      given-names: Kiera
+    - family-names: Suri
+      given-names: "Jasjit S."
+    - family-names: Johri
+      given-names: "Amer M."
+  journal: "Ultrasound in Medicine & Biology"
+  year: 2026
+  month: 6
+  doi: "10.1016/j.ultrasmedbio.2026.05.006"
+  url: "https://doi.org/10.1016/j.ultrasmedbio.2026.05.006"
