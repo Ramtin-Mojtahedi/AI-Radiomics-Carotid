@@ -8,6 +8,43 @@ Analysis notebooks associated with:
 
 > Ricky Hu, Ramtin Mojtahedi, Ergi Duli, Marie-France Hétu, Laura Mantella, Amber L. Simpson, Michael J. Blaha, Taylor Barwell, Kiera Liblik, Jasjit S. Suri, and Amer M. Johri. “Radiomic Carotid Plaque Features Integrated into Machine Learning Models for Cardiovascular Risk Prediction.” *Ultrasound in Medicine & Biology*, In Press, Corrected Proof, available online 12 June 2026. [https://doi.org/10.1016/j.ultrasmedbio.2026.05.006](https://doi.org/10.1016/j.ultrasmedbio.2026.05.006)
 
+<!-- repository-guide:start -->
+## At a glance
+
+[Paper](https://doi.org/10.1016/j.ultrasmedbio.2026.05.006) · [All features](AllFeatures.ipynb) · [Clinical + imaging](ClinHistAndImaging.ipynb) · [Clinical](ClinHistOnly.ipynb) · [Imaging](ImagingOnly.ipynb) · [Radiomics + clinical](RadiomicsAndClinHist.ipynb) · [Radiomics + imaging](RadiomicsAndImaging.ipynb) · [Radiomics](RadiomicsOnly.ipynb) · [`CITATION.cff`](CITATION.cff)
+
+### Dependency evidence
+
+| Package | Role in the committed notebooks |
+|---|---|
+| `pandas` | CSV loading and result tables |
+| `numpy` | Numerical arrays and aggregation |
+| `scikit-learn` | Scaling, classifiers, stratified folds, ROC and classification metrics |
+| `skrebate` | ReliefF feature ranking |
+| `imbalanced-learn` | `RandomOverSampler` |
+| `xgboost` | `XGBClassifier` |
+| `matplotlib` | ROC and analysis plots |
+
+No requirements file or package versions are supplied.
+
+### Analysis flow represented by each feature-set notebook
+
+```mermaid
+flowchart LR
+    A["One expected feature-set CSV<br/>(not included)"] --> B["Outcome: first column<br/>Features: remaining columns"]
+    B --> C["Missing-value inspection"]
+    C --> D["StandardScaler"]
+    D --> E["ReliefF feature selection"]
+    E --> F["RandomOverSampler"]
+    F --> G["SVM · KNN · Random Forest · XGBoost"]
+    G --> H["Stratified K-fold evaluation"]
+    H --> I["ROC/AUC · precision · recall · F1 · accuracy"]
+    I --> J["Plots and retained notebook outputs"]
+```
+
+> **Reproducibility boundary:** this diagram follows the committed cell order. Those cells fit scaling, feature selection, and oversampling before the manually iterated cross-validation splits. A fresh leakage-sensitive evaluation should place these operations inside each training fold and verify the intended procedure against the paper. Patient tables and upstream radiomic extraction are not included.
+<!-- repository-guide:end -->
+
 ## Repository status
 
 > **Important:** this repository is an archival analysis snapshot. It is **not a standalone reproducibility package**, and the notebooks cannot reproduce the paper from a fresh clone.
